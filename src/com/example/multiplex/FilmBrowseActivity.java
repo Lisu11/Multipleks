@@ -33,10 +33,48 @@ public class FilmBrowseActivity extends Activity {
 		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_film_browse);
+		listaFilmow = new ArrayList<Film>();
 		try{
-		if(getIntent().getExtras().getString("szukaj").equals("zsuka"));
-		}catch(Exception e){}
-		listaFilmow = MainActivity.listaFilmow;
+			if(getIntent().getExtras().getString("szukaj").equals("szukaj")){
+				String tyul;
+				boolean tyt = false;
+				if(!(tyul = getIntent().getExtras().getString("tytul")).equals(""))
+					tyt = true;
+				
+				
+				String gatunek;
+				boolean gat = false;
+				
+				if(!(gatunek = getIntent().getExtras().getString("gatunek")).equals(""))
+					gat= true;
+				
+				String rezyser;
+				boolean rez = false;
+				if(!(rezyser = getIntent().getExtras().getString("rezyser")).equals(""))
+					rez = true;
+				int ocena;
+				boolean oc = false;
+				try{
+					ocena = Integer.parseInt(getIntent().getExtras().getString("ocena"));
+					oc = true;
+				} catch(Exception ex){}
+				
+				int rok;
+				boolean rokB = false;
+				try{
+					rok = Integer.parseInt(getIntent().getExtras().getString("rok"));
+					rokB = true;
+				} catch(Exception ex){}
+				if(tyt || gat || rez || oc || rokB){
+					
+				}
+			}
+		}catch(Exception e){
+			for(int i=0; i < MainActivity.listaFilmow.size(); i++)
+				listaFilmow.add(MainActivity.listaFilmow.get(i));
+		}
+		
+		
 		ustawListView();
 	}
 
@@ -53,7 +91,7 @@ public class FilmBrowseActivity extends Activity {
 				Toast toast = Toast.makeText(getApplicationContext(), listaFilmow.get(arg2).getName(), Toast.LENGTH_SHORT);
 				toast.show();
 				Intent i = new Intent(FilmBrowseActivity.this, FilmDetailsActivity.class);
-				Log.v("chuj","na resorach");
+			
 				i.putExtra("co", listaFilmow.get(arg2).getName());
 				startActivity(i);
 				
@@ -120,7 +158,7 @@ public class FilmBrowseActivity extends Activity {
 
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
-			Log.v("nosz","kurwa");
+			
 			View itemview = convertView;
 			if(itemview == null)
 				itemview = getLayoutInflater().inflate(R.layout.item_view, parent, false);

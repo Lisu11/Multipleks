@@ -28,16 +28,18 @@ public class SeanceBrowseActivity extends Activity {
 		setContentView(R.layout.activity_seance_browse);
 
 		//ustawListeSeansow(getIntent().getExtras().getString("jakie"));
-		listaSensow = MainActivity.listaSensow;
+		ustawListe();
 		ustawListView();
 
 	}
 	private void ustawListe(){
+		listaSensow = new ArrayList<Seance>();
 		if(getIntent().getExtras().getString("jakie").equals("wszystkie")){
-			listaSensow = MainActivity.listaSensow;
+			for(int i=0; i < MainActivity.listaSensow.size(); i++)
+				listaSensow.add(MainActivity.listaSensow.get(i));
 		} else if(getIntent().getExtras().getString("jakie").equals("jeden")){
 			String tyul = getIntent().getExtras().getString("tytul");
-			listaSensow = new ArrayList<Seance>();
+			
 			for(int i =0; i < MainActivity.listaSensow.size(); i++)
 				if(MainActivity.listaSensow.get(i).getTitle() ==  tyul)
 					listaSensow.add(MainActivity.listaSensow.get(i));
@@ -57,26 +59,23 @@ public class SeanceBrowseActivity extends Activity {
 					c = true;
 			} catch(Exception e){}
 			if(a || b || c){
-				List<Seance> lista = new ArrayList<Seance>();
 				
 				for(int i=0; i < MainActivity.listaSensow.size(); i++)
-					lista.add(MainActivity.listaSensow.get(i));
+					listaSensow.add(MainActivity.listaSensow.get(i));
 				if(a)
-					for(int i=0; i < lista.size(); i++)
-						if(lista.get(i).getData_day() != Integer.parseInt(din[0]) &&
-						lista.get(i).getData_month() != Integer.parseInt(din[1]))
-							lista.remove(i);
+					for(int i=0; i < listaSensow.size(); i++)
+						if(listaSensow.get(i).getData_day() != Integer.parseInt(din[0]) &&
+						listaSensow.get(i).getData_month() != Integer.parseInt(din[1]))
+							listaSensow.remove(i);
 				if(b)
-					for(int i=0; i < lista.size(); i++)
-						if(lista.get(i).getHour() != godzina)
-							lista.remove(i);
+					for(int i=0; i < listaSensow.size(); i++)
+						if(listaSensow.get(i).getHour() != godzina)
+							listaSensow.remove(i);
 				if(c)
-					for(int i=0; i < lista.size(); i++)
-						if(lista.get(i).getPrice() != cena)
-							lista.remove(i);
-				listaSensow = new ArrayList<Seance>();
-				for(int i=0; i < lista.size(); i++)
-					listaSensow.add(lista.get(i));
+					for(int i=0; i < listaSensow.size(); i++)
+						if(listaSensow.get(i).getPrice() != cena)
+							listaSensow.remove(i);
+				
 			} else
 				listaSensow = new ArrayList<Seance>();
 		}
