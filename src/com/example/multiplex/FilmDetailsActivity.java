@@ -1,20 +1,15 @@
 package com.example.multiplex;
 
 import android.app.Activity;
-import android.app.ActionBar;
-import android.app.Fragment;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.os.Build;
 
 public class FilmDetailsActivity extends Activity {
 	String tytul;
@@ -42,11 +37,21 @@ public class FilmDetailsActivity extends Activity {
 			TextView tytul2 = (TextView) findViewById(R.id.orgTitleView2);
 			tytul2.setText(f.getorg_name());
 			TextView gene = (TextView) findViewById(R.id.geneView3);
-			tytul2.setText(f.getGenes());
-			TextView link = (TextView) findViewById(R.id.geneView3);
-			tytul2.setText(f.getWeb());
+			gene.setText(f.getGenes());
+			final TextView link = (TextView) findViewById(R.id.geneView3);
+			link.setText(f.getWeb());
+			link.setOnClickListener(new OnClickListener() {
+				
+				@Override
+				public void onClick(View v) {
+					Uri uri = Uri.parse((String) link.getText());
+					//Uri uri = Uri.parse("http://google.com");
+					Intent i = new Intent(Intent.ACTION_VIEW, uri);
+					startActivity(i);
+				}
+			});
 			TextView des = (TextView) findViewById(R.id.opisView2);
-			tytul2.setText(f.getDescription());
+			des.setText(f.getDescription());
 			RatingBar rb = (RatingBar)findViewById(R.id.ratiBar1);
 			rb.setMax(10);
 			rb.setRating(f.getRating());

@@ -24,10 +24,11 @@ public class SeanceSeachActivity extends Activity {
 		setContentView(R.layout.search_seance);
 		
 		date = (EditText)findViewById(R.id.editText11);
+		date.setHint("Wyszukaj po dacie seansu");
 		godzina = (EditText)findViewById(R.id.editText21);
-		
+		godzina.setHint("Wyszukaj po godzinie seansu");
 		cena = (EditText)findViewById(R.id.editText31);
-		//cena.setInputType(InputType.);
+		cena.setHint("Wyszukaj po cenie bieltu");
 		date.addTextChangedListener(new TextWatcher() {
 			 private String current = "";
 			    private String ddmmyyyy = "DDMMYYYY";
