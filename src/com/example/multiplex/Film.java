@@ -9,14 +9,27 @@ public class Film {
 	private String genes;
 	private int filmID;
 	private String web;
+	private int rok;
 	
+	public String getOrg_name() {
+		return org_name;
+	}
+	public void setOrg_name(String org_name) {
+		this.org_name = org_name;
+	}
+	public int getRok() {
+		return rok;
+	}
+	public void setRok(int rok) {
+		this.rok = rok;
+	}
 	public int getFilmID() {
 		return filmID;
 	}
 	public void setFilmID(int filmID) {
 		this.filmID = filmID;
 	}
-	public Film(String name, String org_name, String path, int rating, String desc, String gen, int f, String w){
+	public Film(String name, String org_name, String path, int rating, String desc, String gen, int f, String w, int rok){
 		genes = gen;
 		this.org_name = org_name;
 		this.name = name;
@@ -24,6 +37,7 @@ public class Film {
 		this.rating = rating;
 		this.description = desc;
 		filmID =f;
+		this.rok = rok;
 		web = w;
 	}
 	public String getWeb() {

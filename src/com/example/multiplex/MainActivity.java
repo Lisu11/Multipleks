@@ -76,7 +76,8 @@ public class MainActivity extends Activity {
 				try{
 					listaFilmow.add(new Film(""+ja.get("tytul"), ""+ja.get("tytul"), ""+ja.get("link_do_obrazka"), 
 						Integer.parseInt(""+ja.get("ocena")), ""+ja.get("nasz_opis"), ""+ja.get("gatunek"), 
-						Integer.parseInt(""+ja.get("filmID")), ""+ja.get("link_do_filmweb")));
+						Integer.parseInt(""+ja.get("filmID")), ""+ja.get("link_do_filmweb"),
+						Integer.parseInt(""+ja.get("rok_produkcji"))));//sprawdzic czy rok_produkcji jest w bazie
 				} catch(NumberFormatException e){Log.v("obsl", e.toString());}
 			}
 

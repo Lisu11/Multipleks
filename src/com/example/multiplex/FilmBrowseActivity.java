@@ -52,21 +52,37 @@ public class FilmBrowseActivity extends Activity {
 				boolean rez = false;
 				if(!(rezyser = getIntent().getExtras().getString("rezyser")).equals(""))
 					rez = true;
-				int ocena;
+				int ocena =0;
 				boolean oc = false;
 				try{
 					ocena = Integer.parseInt(getIntent().getExtras().getString("ocena"));
 					oc = true;
 				} catch(Exception ex){}
 				
-				int rok;
+				int rok=0;
 				boolean rokB = false;
 				try{
 					rok = Integer.parseInt(getIntent().getExtras().getString("rok"));
 					rokB = true;
 				} catch(Exception ex){}
 				if(tyt || gat || rez || oc || rokB){
-					
+					if(tyt)
+						for(int i=0; i < listaFilmow.size(); i++)
+							if(!listaFilmow.get(i).getName().equals(tyul))
+								listaFilmow.remove(i);
+					if(gat)
+						for(int i=0; i < listaFilmow.size(); i++)
+							if(!listaFilmow.get(i).getGenes().contains(gatunek))
+								listaFilmow.remove(i);
+					if(oc)
+						for(int i=0; i < listaFilmow.size(); i++)
+							if(!(listaFilmow.get(i).getRating() >= ocena-1 &&
+							listaFilmow.get(i).getRating() <= ocena+1))
+								listaFilmow.remove(i);
+					if(rokB)
+						for(int i=0; i < listaFilmow.size(); i++)
+							if(listaFilmow.get(i).getRok() != rok)
+								listaFilmow.remove(i);
 				}
 			}
 		}catch(Exception e){
