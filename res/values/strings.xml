@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Multiplex</string>
+    <string name="action_settings">Settings</string>
+    <string name="browse_movies">Przeglądaj filmy</string>
+    <string name="browse_seance">Przeglądaj seanse</string>
+    <string name="search">Wyszukaj</string>
+    <string name="contact">Kontakt</string>
+    <string name="title_activity_film_browse">FilmBrowseActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_seance_browse">SeanceBrowseActivity</string>
+    <string name="title_activity_searching">SearchingActivity</string>
+    <string name="title_activity_info">InfoActivity</string>
+    <string name="title_activity_film_details">FilmDetailsActivity</string>
+    <string name="title_activity_wait">WaitActivity</string>
+
+</resources>

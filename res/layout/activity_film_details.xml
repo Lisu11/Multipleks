@@ -1,0 +1,87 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.multiplex.FilmDetailsActivity"
+    tools:ignore="MergeRootFrame" 
+    android:background="@android:color/background_dark"
+    android:clickable="true"
+    android:onClick="seanseZtymFilmem">
+    
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="470dp"
+        android:src="@drawable/centipede2" />
+
+    <TextView
+        android:id="@+id/titleView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="8.04"
+        android:text="Ludzka stonoga 2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white"
+        android:textSize="30dp" />
+
+
+    <TextView
+        android:id="@+id/orgTitleView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="8.04"
+        android:text="Human centipede 2"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textSize="22dp" />
+
+
+
+    <TextView
+        android:id="@+id/geneView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="8.04"
+        android:text="gatunek: horror, gore"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textSize="22dp" />
+
+ 
+
+    <TextView
+        android:id="@+id/RezyserView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="8.04"
+        android:text="reżyseria: Tom SIX"
+        android:textColor="@android:color/white"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textSize="22dp" />
+
+
+    <TextView
+        android:id="@+id/LinkView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="http://www.filmweb.pl/film/Ludzka+stonoga+2-2011-558111/descs" 
+        android:textColor="@android:color/white"/>
+
+    <RatingBar
+        android:id="@+id/ratiBar1"
+        android:layout_width="578dp"
+        android:layout_height="wrap_content" 
+        android:isIndicator="true"/>
+
+    <TextView
+        android:id="@+id/opisView2"
+        android:layout_width="571dp"
+        android:layout_weight="242.45"
+        android:layout_height="wrap_content"
+        android:text="Martin jest samotnikiem, który mieszka razem z matką na ponurym osiedlu. Pracuje na nocną zmianę jako ochroniarz podziemnego parkingu. Uciekając od szarej rzeczywistości, Martin zatraca się w świecie fantasy, inspirowany filmem &quot;Ludzka stonoga&quot;. Podziwiając umiejętności dr Heitera, oraz jego wiedzę na temat ludzkiego układu pokarmowego, Martin decyduje się wykonać coś niewyobrażalnego...  "
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/white"
+        android:textSize="22dp" />
+</LinearLayout>

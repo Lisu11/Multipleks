@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="@android:color/black"    >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:adjustViewBounds="true"
+        android:minHeight="400dp"
+        android:minWidth="200dp"
+        android:maxHeight="400dp"
+        android:maxWidth="200dp"
+        android:src="@drawable/centipede2" />
+
+    <TextView
+        android:id="@+id/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="Ludzka stonoga 2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@android:color/white"
+        android:textSize="35sp" />
+
+    <TextView
+        android:id="@+id/OrginalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Title"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="Human centipede 2"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/white"
+        android:textSize="22dp" />
+
+    <RatingBar
+        android:id="@+id/ratingBar1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView1"
+        android:layout_alignLeft="@+id/genes"
+        android:isIndicator="true"
+        android:max="10"
+        android:maxHeight="30dp"
+        android:rating="9"
+        android:stepSize="1" />
+
+    <TextView
+        android:id="@+id/RezyserV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/genes"
+        android:layout_marginTop="28dp"
+        android:layout_toRightOf="@+id/imageView1"
+        android:text="reżyseria: Tom Six"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/genes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/OrginalTitle"
+        android:layout_toRightOf="@+id/imageView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="gatunek: horror,gore"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="@android:color/white"
+        android:textSize="22dp" />
+
+    <TextView
+        android:id="@+id/produkcja"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RezyserV"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+       android:layout_toRightOf="@+id/imageView1"
+        android:text="produkcja: USA "
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/white"
+        android:textSize="22dp" />
+
+</RelativeLayout>
